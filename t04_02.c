@@ -2,21 +2,21 @@
 // 12S24041 - NIKAH SUCHIA PANJAITAN
 
 #include <stdio.h>
-
-#include <stdio.h>
 #include <string.h>
 
-int main(int _argv, char **_argc) {
-    char str[21]; 
+int main() {
+    char msk[61];
+    int i;
+
+    fgets(msk, 61, stdin);
     
-    if (fgets(str, sizeof(str), stdin) != NULL) {
-        str[strcspn(str, "\n")] = '\0'; 
-        
-        for (int i = 0; str[i] != '\0'; i++) {
-            printf("%03d", (unsigned char)str[i]);
-        }
-        printf("\n");
+    msk[strcspn(msk, "\n")] = 0;
+
+    for (i = 0; i < strlen(msk); i++) {
+        printf("%03d", msk[i]);
     }
-    
+
+    printf("013\n");
+
     return 0;
 }
